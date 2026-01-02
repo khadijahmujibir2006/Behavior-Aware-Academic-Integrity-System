@@ -1,4 +1,4 @@
-# Python
+
 __pycache__/
 *.pyc
 *.pyo
@@ -9,18 +9,18 @@ env/
 venv/
 *.swp
 
-# VS Code
+
 .vscode/
 
-# Jupyter Notebook
+
 .ipynb_checkpoints/
 
-# Data & outputs (optional, if you don’t want to upload large files)
+
 data/
 outputs/
 
 # Logs
 *.log
 
-# Models (optional, if large)
+
 models/
