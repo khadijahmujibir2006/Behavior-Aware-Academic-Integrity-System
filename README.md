@@ -1,170 +1,146 @@
- Behavior-Aware Academic Integrity System
-
-A real-time computer vision–based proctoring system that monitors examinee behavior during online exams and detects suspicious activities using behavioral analysis instead of heavy object detection.
-
-This project focuses on explainable AI, combining face landmarks, eye gaze, head movement, and hand proximity analysis to ensure academic integrity.
-
- Key Features
-
- Live webcam monitoring
-
- Face presence detection
-
- Multiple person detection
-
- Eye gaze tracking (looking away)
-
- Head movement detection (head down / turned)
-
- Hand near face detection (possible phone usage)
-
- Time-based suspicious behavior analysis
-
- Alert logging for audit purposes
-
- Explainable, rule-based AI logic
-
- Why This Project Is Unique
-
-Unlike traditional proctoring systems that rely only on object detection, this system:
-
-Focuses on behavioral patterns
-
-Uses simple, explainable rules
-
-Avoids heavy deep learning models
-
-Works efficiently on CPU
-
-Is easy to justify in exams and interviews
-
-This makes it suitable for academic use, demos, and research-oriented evaluation.
-
-⚙️ Technology Stack
-
-Python 3.10
-
-OpenCV
-
-MediaPipe
-
-NumPy
-
-Git & GitHub
-
- System Architecture (High-Level)
-Webcam Feed
-     ↓
-Face & Hand Detection (MediaPipe)
-     ↓
-Behavior Analysis (Rules + Timers)
-     ↓
-Real-Time Alerts on Screen
-     ↓
-Alert Logging (outputs/alerts.log)
-
- Behaviors Detected
-Behavior	Description
-Normal Behavior	Single face, stable gaze
-Candidate Missing	No face detected
-Multiple Faces	More than one face in frame
-Eye Gaze Deviation	Looking left/right repeatedly
-Head Down	Possible reading or phone usage
-Hand Near Face	Possible phone usage
-Prolonged Suspicion	Behavior persists over time
- How to Run the Project
-1️ Clone the Repository
-git clone https://github.com/khadijahmujibir2006/Behavior-Aware-Academic-Integrity-System.git
-cd Behavior-Aware-Academic-Integrity-System
-
-2️ Install Dependencies
-pip install -r requirements.txt
-
-3️ Run the System
-py -3.10 src/main.py
-
-
- Press Q to exit the camera window.
-
- Project Structure
-Behavior-Aware-Academic-Integrity-System/
-├── src/
-│   └── main.py
-├── outputs/
-│   └── alerts.log   (generated at runtime)
-├── data/
-├── models/
-├── README.md
-├── requirements.txt
-└── .gitignore
-
- Output & Logging
-
-The system generates alerts during runtime
-
-Alerts are stored locally in:
-
-outputs/alerts.log
-
-
-Logs are intentionally excluded from GitHub using .gitignore
-
-This follows professional version control practices
-
-📸 Sample Output (Recommended)
-
-You can add screenshots of:
-
-Normal behavior
-
-Eye gaze alert
-
-Hand near face alert
-
-Place them in an assets/ folder and link them here.
-
- Use Cases
-
-Online examinations
-
-Remote proctoring systems
-
-Academic integrity monitoring
-
-Behavior analysis research
-
-Computer vision demonstrations
-
- Future Enhancements
-
-Eye blink frequency analysis
-
-Emotion detection
-
-Admin dashboard with charts
-
-Multiple camera support
-
-Cloud-based alert storage
-
- Interview & Viva Highlights
-
-“This project uses behavior-based AI instead of pure object detection, making it explainable, efficient, and suitable for academic integrity monitoring.”
-
- Author
-
-Khadijah Mujibir Rahiman
-B.E. Computer Science and Engineering
-St. Joseph’s Institute of Technology
-
-GitHub: khadijahmujibir2006
-
- Acknowledgements
-
-OpenCV
-
-MediaPipe
-
-GitHub Open Source Community
-
-
+#  Behavior-Aware Academic Integrity System
+
+##  Overview
+The **Behavior-Aware Academic Integrity System** is an advanced **computer vision–based monitoring framework** designed to detect and analyze **suspicious behaviors during academic examinations**.
+
+Unlike traditional proctoring systems that rely only on object detection or screen monitoring, this system performs **behavioral analysis** by combining **object detection, tracking, classification, and temporal behavior modeling** to ensure exam integrity in both **offline and online examination environments**.
+
+---
+
+##  Problem Statement
+Academic institutions face increasing challenges in maintaining exam integrity due to:
+- Cheating using mobile phones or external devices
+- Impersonation and multiple-person presence
+- Abnormal head and eye movements
+- Lack of intelligent, automated monitoring systems
+
+Conventional proctoring solutions are often **static**, **rule-based**, and fail to understand **human behavior patterns**.
+
+---
+
+##  Proposed Solution
+This project introduces a **behavior-aware vision system** that continuously monitors a student through a camera feed and intelligently identifies **potential integrity violations**.
+
+The system does not merely detect objects—it **understands behavior over time** by tracking movements, analyzing posture, and classifying actions as **normal or suspicious**.
+
+---
+
+##  System Architecture
+Camera Input
+↓
+Face & Person Detection
+↓
+Object Detection (Phone, Multiple Persons)
+↓
+Object & Head Movement Tracking
+↓
+Behavior Classification Engine
+↓
+Integrity Risk Assessment & Alerts
+
+yaml
+Copy code
+
+---
+
+##  Key Features
+- Real-time face and person detection
+- Mobile phone detection during exams
+- Multi-person presence detection
+- Head movement and gaze direction tracking
+- Behavioral classification (Normal / Suspicious)
+- Temporal behavior analysis across frames
+- Visual alerts and integrity status indicators
+
+---
+
+##  Computer Vision Tasks Used
+### 🔹 Image Classification
+Classifies observed behavior patterns as **normal** or **suspicious**.
+
+### 🔹 Object Detection
+Detects:
+- Face
+- Person
+- Mobile phone
+- Unauthorized objects
+
+### 🔹 Object Tracking
+Tracks:
+- Student head movement
+- Face position across frames
+- Detected objects over time
+
+### 🔹 Behavioral Analysis
+Uses temporal patterns to detect:
+- Frequent looking away
+- Repeated downward gaze
+- Presence of multiple individuals
+- Suspicious object usage
+
+---
+
+##  Core Computer Science Concepts
+- Computer Vision and Image Processing
+- Machine Learning–based Classification
+- Temporal Data Analysis
+- Data Structures for Tracking (IDs, queues)
+- System Design and Real-Time Processing
+- Ethical AI and Responsible Monitoring
+
+---
+
+##  Technologies Used
+- Python 3.x
+- OpenCV
+- NumPy
+- Deep Learning models (CNN-based)
+- Tracking algorithms (CSRT / DeepSORT)
+- Streamlit / Flask (for dashboard visualization)
+
+---
+
+##  How the System Works
+1. Captures live video feed
+2. Detects faces, persons, and objects
+3. Tracks movements frame-by-frame
+4. Analyzes behavior patterns over time
+5. Flags suspicious activities
+6. Displays alerts and integrity status
+
+---
+
+##  Applications
+- Online examination proctoring
+- University and school exam halls
+- Remote assessments
+- Certification platforms
+- Secure testing environments
+
+---
+
+##  Why This Project Is Unique
+- Focuses on **behavioral intelligence**, not just detection
+- Integrates multiple CV tasks into a single system
+- Real-world ethical and educational impact
+- Highly relevant to current online education challenges
+- Strong balance of **AI + system design**
+
+---
+
+##  Ethical Considerations
+- Designed strictly for academic integrity
+- No biometric data stored permanently
+- Operates under institutional guidelines
+- Emphasizes responsible AI usage
+
+---
+
+##  Author
+**Khadijah Mujibir Rahiman**  
+B.E. Computer Science and Engineering  
+
+---
+
+##  Conclusion
+The Behavior-Aware Academic Integrity System demonstrates how advanced computer vision and behavioral analysis can be responsibly applied to strengthen academic integrity. By understanding *how* students behave rather than merely *what* they do, the system provides a more intelligent, adaptive, and ethical approach to exam monitoring.
